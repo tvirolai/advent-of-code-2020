@@ -28,13 +28,8 @@ def is_valid_2(instr, password):
 
 
 def solve(part):
-    count = 0
     fn = is_valid_1 if part == 1 else is_valid_2
-    for instr, password in input:
-        if fn(instr, password):
-            count += 1
-    return count
-
+    return sum([1 for instr, password in input if fn(instr, password)])
 
 print("PART 1: {0}".format(solve(1)))
 print("PART 2: {0}".format(solve(2)))
